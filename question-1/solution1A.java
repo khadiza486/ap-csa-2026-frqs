@@ -1,10 +1,13 @@
 public Account( String requestedName){
     int num =1;
-    if(requestedName.isAvailable()){
+    if(isAvailable(requestedName)){
         username = requestedName;
-    } 
-    while(!requestedName.isAvailable()){
-        username = requestedName+num;
+    }else{
+      while(!isAvailable(requestedName+num)){
+       
         num++;
-    }
+      }
+     username = requestedName+num;  
+    } 
+    
 }
